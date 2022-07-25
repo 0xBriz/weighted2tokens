@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "build": "npx hardhat compile",
+    "deploy": "npx hardhat run --network bsc ./scripts/deploy.ts",
     "measure-gas-deployment": "hardhat run lib/scripts/gas-measurement/deployment.ts",
     "measure-gas-single-pair": "hardhat run lib/scripts/gas-measurement/singlePair.ts",
     "measure-gas-multihop": "hardhat run lib/scripts/gas-measurement/multihop.ts",

@@ -85,7 +85,7 @@ export default {
     },
     bsc: {
       url: process.env.BSC_RPC_URL || '',
-      accounts:process.env.DEV_KEY ? [process.env.DEV_KEY] : []
+      accounts: [`0x${process.env.DEV_KEY}`]
     }
   },
   namedAccounts: {
