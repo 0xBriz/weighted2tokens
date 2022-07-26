@@ -77,16 +77,20 @@ export default {
       accounts: [`0x${DEPLOYER_PRIVATE_KEY}`, `0x${CONTROLLER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
       saveDeployments: true,
     },
-    goerli: {
-      chainId: CHAIN_IDS.goerli,
-      url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
-      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`, `0x${CONTROLLER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
-      saveDeployments: true,
-    },
+    // goerli: {
+    //   chainId: CHAIN_IDS.goerli,
+    //   url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
+    //   accounts: [`0x${DEPLOYER_PRIVATE_KEY}`, `0x${CONTROLLER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
+    //   saveDeployments: true,
+    // },
     bsc: {
       url: process.env.BSC_RPC_URL || '',
       accounts: [`0x${process.env.DEV_KEY}`]
-    }
+    },
+    goerli: {
+      url: process.env.GOERLI_RPC || "",
+      accounts: process.env.DEV_KEY !== undefined ? [`0x${process.env.DEV_KEY}`] : [],
+    },
   },
   namedAccounts: {
     deployer: {
